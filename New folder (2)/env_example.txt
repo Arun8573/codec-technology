@@ -1,0 +1,30 @@
+# Environment Variables for Web Scraper
+# Copy this file to .env and modify as needed
+
+# Celery Configuration
+CELERY_BROKER_URL=redis://localhost:6379/0
+CELERY_RESULT_BACKEND=redis://localhost:6379/0
+
+# Alternative: Use SQLite as broker (for development without Redis)
+# CELERY_BROKER_URL=sqla+sqlite:///celery_broker.db
+# CELERY_RESULT_BACKEND=db+sqlite:///celery_results.db
+
+# Database Configuration
+DATABASE_PATH=scraper_data.db
+CSV_EXPORT_PATH=exports/
+
+# Scraping Configuration
+DEFAULT_TIMEOUT=30
+DEFAULT_WAIT_TIME=5
+
+# Scheduler Configuration
+DEFAULT_SCHEDULE_INTERVAL=3600
+MAX_RETRIES=3
+RETRY_DELAY=300
+
+# Logging Configuration
+LOG_LEVEL=INFO
+LOG_FILE=scraper.log
+
+# Export Configuration
+MAX_EXPORT_SIZE=10000
